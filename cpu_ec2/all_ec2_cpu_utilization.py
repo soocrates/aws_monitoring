@@ -84,6 +84,11 @@ metrics_info = [
     ('DiskReadOps', 'Count'),
     ('DiskWriteBytes', 'Bytes'),
     ('DiskWriteOps', 'Count'),
+    ('CPUCreditBalance', 'Count'),
+    ('EBSWriteBytes', 'Bytes'),
+    ('EBSReadBytes', 'Bytes'),
+    ('EBSWriteOps', 'Count'), 
+    ('EBSReadOps', 'Count')
     ('CPUCreditUsage', 'Count'),
     ('CPUCreditBalance', 'Count')
 ]
