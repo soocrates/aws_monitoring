@@ -20,20 +20,20 @@ for region in regions:
 
     # Describe all volumes
     volumes = ec2.describe_volumes()
-    print(volumes)
+    # print(volumes)
 
     # Print table head
 
-    # # Print details for each volume
-    # for volume in volumes['Volumes']:
-    #     # Extracting data
-    #     volume_id = volume['VolumeId']
-    #     volume_type = volume['VolumeType']
-    #     size = f"{volume['Size']} GiB"
-    #     iops = volume.get('Iops', 'N/A')
-    #     throughput = f"{volume.get('Throughput', 'N/A')} MB/s"
-    #     volume_state = volume['State']
-    #     attach_resources = "No attachments" if not volume['Attachments'] else ", ".join([attachment['InstanceId'] for attachment in volume['Attachments']])
+    # Print details for each volume
+    for volume in volumes['Volumes']:
+        # Extracting data
+        volume_id = volume['VolumeId']
+        volume_type = volume['VolumeType']
+        size = f"{volume['Size']} GiB"
+        iops = volume.get('Iops', 'N/A')
+        throughput = f"{volume.get('Throughput', 'N/A')} MB/s"
+        volume_state = volume['State']
+        attach_resources = "No attachments" if not volume['Attachments'] else ", ".join([attachment['InstanceId'] for attachment in volume['Attachments']])
         
-    #     # Print table row
-    #     print(f"| {region} | {volume_id} | {volume_type} | {size} | {iops} | {throughput} | {volume_state} | {attach_resources} |")
+        # Print table row
+        print(f"| {region} | {volume_id} | {volume_type} | {size} | {iops} | {throughput} | {volume_state} | {attach_resources} |")

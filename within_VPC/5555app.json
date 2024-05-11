@@ -1,0 +1,203 @@
+[
+  {
+    "Region": "ap-northeast-1",
+    "InstanceId": "i-0acb1636653e95abd",
+    "InstanceType": "r5b.xlarge",
+    "PublicIP": null,
+    "InstanceMetrics": {
+      "CPUUtilization": {
+        "Minimum": 1.3749770837152713,
+        "Maximum": 1.4583090281828637,
+        "Average": 1.4132768383315748
+      },
+      "NetworkIn": {
+        "Minimum": 405351.0,
+        "Maximum": 478133.0,
+        "Average": 432816.86666666664
+      },
+      "NetworkOut": {
+        "Minimum": 674834.0,
+        "Maximum": 707860.0,
+        "Average": 683348.9666666667
+      },
+      "NetworkPacketsIn": {
+        "Minimum": 1925.0,
+        "Maximum": 2132.0,
+        "Average": 1997.4666666666667
+      },
+      "NetworkPacketsOut": {
+        "Minimum": 1628.0,
+        "Maximum": 1811.0,
+        "Average": 1689.6166666666666
+      },
+      "DiskReadBytes": {
+        "Minimum": "--",
+        "Maximum": "--",
+        "Average": "--"
+      },
+      "DiskReadOps": {
+        "Minimum": "--",
+        "Maximum": "--",
+        "Average": "--"
+      },
+      "DiskWriteBytes": {
+        "Minimum": "--",
+        "Maximum": "--",
+        "Average": "--"
+      },
+      "DiskWriteOps": {
+        "Minimum": "--",
+        "Maximum": "--",
+        "Average": "--"
+      },
+      "EBSWriteBytes": {
+        "Minimum": 36864.0,
+        "Maximum": 451072.0,
+        "Average": 138683.73333333334
+      },
+      "EBSReadBytes": {
+        "Minimum": 0.0,
+        "Maximum": 0.0,
+        "Average": 0.0
+      },
+      "EBSWriteOps": {
+        "Minimum": 6.0,
+        "Maximum": 88.0,
+        "Average": 24.091666666666665
+      },
+      "EBSReadOps": {
+        "Minimum": 0.0,
+        "Maximum": 0.0,
+        "Average": 0.0
+      },
+      "CPUCreditUsage": {
+        "Minimum": "--",
+        "Maximum": "--",
+        "Average": "--"
+      },
+      "CPUCreditBalance": {
+        "Minimum": "--",
+        "Maximum": "--",
+        "Average": "--"
+      }
+    },
+    "Volumes": [
+      {
+        "VolumeId": "vol-0b70abc1e46a62f97",
+        "InstanceId": "i-0acb1636653e95abd",
+        "Type": "gp3",
+        "Size": "80 GB",
+        "VolumeMetrics": {
+          "VolumeReadBytes": {
+            "Minimum": 0.0,
+            "Maximum": 0.0,
+            "Average": 0.0
+          },
+          "VolumeWriteBytes": {
+            "Minimum": 36864.0,
+            "Maximum": 451072.0,
+            "Average": 169813.33333333334
+          },
+          "VolumeReadOps": {
+            "Minimum": 0.0,
+            "Maximum": 0.0,
+            "Average": 0.0
+          },
+          "VolumeWriteOps": {
+            "Minimum": 6.0,
+            "Maximum": 88.0,
+            "Average": 29.183333333333334
+          },
+          "VolumeTotalReadTime": {
+            "Minimum": 0.0,
+            "Maximum": 0.0,
+            "Average": 0.0
+          },
+          "VolumeTotalWriteTime": {
+            "Minimum": 0.004807,
+            "Maximum": 0.069678,
+            "Average": 0.02308921666666666
+          },
+          "VolumeIdleTime": {
+            "Minimum": 59.977246,
+            "Maximum": 59.99726,
+            "Average": 59.99196719999999
+          },
+          "VolumeQueueLength": {
+            "Minimum": 0.0,
+            "Maximum": 0.0009765625,
+            "Average": 1.6276041666666666e-05
+          },
+          "VolumeConsumedReadWriteOps": {
+            "Minimum": "--",
+            "Maximum": "--",
+            "Average": "--"
+          },
+          "BurstBalance": {
+            "Minimum": "--",
+            "Maximum": "--",
+            "Average": "--"
+          }
+        }
+      },
+      {
+        "VolumeId": "vol-047c57bc0f0de8f62",
+        "InstanceId": "i-0acb1636653e95abd",
+        "Type": "gp2",
+        "Size": "100 GB",
+        "VolumeMetrics": {
+          "VolumeReadBytes": {
+            "Minimum": 0.0,
+            "Maximum": 0.0,
+            "Average": 0.0
+          },
+          "VolumeWriteBytes": {
+            "Minimum": 81920.0,
+            "Maximum": 192512.0,
+            "Average": 106359.46666666666
+          },
+          "VolumeReadOps": {
+            "Minimum": 0.0,
+            "Maximum": 0.0,
+            "Average": 0.0
+          },
+          "VolumeWriteOps": {
+            "Minimum": 15.0,
+            "Maximum": 27.0,
+            "Average": 18.583333333333332
+          },
+          "VolumeTotalReadTime": {
+            "Minimum": 0.0,
+            "Maximum": 0.0,
+            "Average": 0.0
+          },
+          "VolumeTotalWriteTime": {
+            "Minimum": 0.010216,
+            "Maximum": 0.02839,
+            "Average": 0.014677399999999998
+          },
+          "VolumeIdleTime": {
+            "Minimum": 59.972949,
+            "Maximum": 59.990383,
+            "Average": 59.98703935
+          },
+          "VolumeQueueLength": {
+            "Minimum": 0.0,
+            "Maximum": 0.0,
+            "Average": 0.0
+          },
+          "VolumeConsumedReadWriteOps": {
+            "Minimum": "--",
+            "Maximum": "--",
+            "Average": "--"
+          },
+          "BurstBalance": {
+            "Minimum": 99.0,
+            "Maximum": 99.0,
+            "Average": 99.0
+          }
+        }
+      }
+    ]
+  }
+]

@@ -25,12 +25,12 @@ response = cost_explorer.get_cost_and_usage(
 
 def process_data(groups):
     region_data = {}
-    # Organize data by region, filtering out zero costs
+    # Organize data by region, focusing on EC2 and filtering out zero costs
     for item in groups:
         region = item['Keys'][1]
         service = item['Keys'][0]
         cost = float(item['Metrics']['UnblendedCost']['Amount'])
-        if cost > 0:  # Only consider non-zero costs
+        if service == 'Amazon Elastic Compute Cloud - Compute' and cost > 0:  # Filter for EC2 only with non-zero costs
             if region not in region_data:
                 region_data[region] = []
             region_data[region].append({
@@ -38,9 +38,7 @@ def process_data(groups):
                 'Cost': cost
             })
 
-    # Filter out regions with no costs
-    filtered_region_data = {region: services for region, services in region_data.items() if any(service['Cost'] > 0 for service in services)}
-    return filtered_region_data
+    return region_data
 
 # Process the data
 groups = response['ResultsByTime'][0]['Groups']

@@ -15,8 +15,6 @@ def list_aws_regions():
   
 # logging.basicConfig(level=logging.DEBUG)
 
-try:
-    regions = list_aws_regions()
-    print(regions)
-except ClientError as e:
-    logging.error(e)
+
+regions = list_aws_regions()
+print(regions)
