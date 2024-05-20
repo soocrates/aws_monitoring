@@ -7,7 +7,7 @@ cloudwatch = boto3.client('cloudwatch')
 ec2 = boto3.client('ec2')
 
 # Specify the instance ID
-instance_id = 'i-0362096e25040341e'
+instance_id = 'i-0687fdc27af20f058'
 
 def get_compute_resource_usage(instance_id, metric_name, unit, start_time, end_time, period=10800):
     try:
@@ -56,7 +56,11 @@ metrics_info = [
     ('DiskWriteBytes', 'Bytes'),
     ('DiskWriteOps', 'Count'),
     ('CPUCreditUsage', 'Count'),
-    ('CPUCreditBalance', 'Count')
+    ('CPUCreditBalance', 'Count'),
+    ('EBSWriteBytes', 'Bytes'),
+    ('EBSReadBytes', 'Bytes'),
+    ('EBSWriteOps', 'Count'), 
+    ('EBSReadOps', 'Count')
 ]
 
 # Retrieve and analyze data for each metric

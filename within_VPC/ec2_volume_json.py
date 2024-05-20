@@ -1,5 +1,6 @@
 import boto3
 from datetime import datetime, timedelta, timezone
+import json
 
 def list_aws_regions():
     ec2 = boto3.client('ec2')
@@ -19,18 +20,16 @@ def list_running_instances(region):
                 volumes_response = ec2.describe_volumes(VolumeIds=volume_ids)
                 for volume in volumes_response['Volumes']:
                     volume_info = {
-                        'Volume ID': volume['VolumeId'],
+                        'VolumeId': volume['VolumeId'],
                         'Type': volume['VolumeType'],
-                        'Size': volume['Size'],
-                        'IOPS': volume.get('Iops', 'N/A'),
-                        'Throughput': volume.get('Throughput', 'N/A')
+                        'Size': f"{volume['Size']} GB",
                     }
                     volumes_info.append(volume_info)
             instance_info = {
+                'InstanceId': instance['InstanceId'],
                 'Region': region,
-                'Instance ID': instance['InstanceId'],
-                'Instance Type': instance['InstanceType'],
-                'Public IP': instance.get('PublicIpAddress', 'None'),
+                'InstanceType': instance['InstanceType'],
+                'PublicIP': instance.get('PublicIpAddress', None),
                 'Volumes': volumes_info
             }
             instances.append(instance_info)
@@ -58,18 +57,14 @@ def get_cloudwatch_metrics(client, namespace, metric_name, unit, dimensions, sta
         return {'Minimum': '--', 'Maximum': '--', 'Average': '--'}
 
 def analyze_instance_and_volume_metrics(regions, start_time, end_time):
+    all_data = []
     for region in regions:
         ec2 = boto3.client('ec2', region_name=region)
         cloudwatch = boto3.client('cloudwatch', region_name=region)
         running_instances = list_running_instances(region)
-        
-        for instance in running_instances:
-            print("\n")
-            print("| Region  | Instance ID       | Instance Type | Public IP |")
-            print("|---------|-------------------|---------------|-----------|")
-            print(f"|{region} | {instance['Instance ID']} | {instance['Instance Type']}| {instance['Public IP']}")
 
-            instance_metrics = [
+        for instance in running_instances:
+            instance_metrics_names = [
                 ('CPUUtilization', 'Percent'),
                 ('NetworkIn', 'Bytes'),
                 ('NetworkOut', 'Bytes'),
@@ -86,44 +81,39 @@ def analyze_instance_and_volume_metrics(regions, start_time, end_time):
                 ('CPUCreditUsage', 'Count'),
                 ('CPUCreditBalance', 'Count')
             ]
-            
-            print("\n")
-            print("\nInstance Metrics:")
-            print("| Metric  |        Min       |       Max      |     Avg |")
-            print("|---------|------------------|----------------|-----------|")
-            for metric, unit in instance_metrics:
-                data = get_cloudwatch_metrics(cloudwatch, 'AWS/EC2', metric, unit, [{'Name': 'InstanceId', 'Value': instance['Instance ID']}], start_time, end_time)
-                print(f"|{metric}|{data['Minimum']}|{data['Maximum']}| {data['Average']}")
-
-            volume_metrics = [
-                ('VolumeReadBytes','Bytes'),
-                ('VolumeWriteBytes', 'Bytes'),
-                ('VolumeReadOps','Count'),
-                ('VolumeWriteOps','Count'),
-                ('VolumeTotalReadTime','Seconds'),
-                ('VolumeTotalWriteTime','Seconds'),
-                ('VolumeIdleTime', 'Seconds'),
-                ('VolumeQueueLength','Count'),
-                ('VolumeConsumedReadWriteOps','Count'),
-                ('BurstBalance', 'Percent')
-            ]
+            instance_metrics = {}
+            for metric, unit in instance_metrics_names:
+                data = get_cloudwatch_metrics(cloudwatch, 'AWS/EC2', metric, unit, [{'Name': 'InstanceId', 'Value': instance['InstanceId']}], start_time, end_time)
+                instance_metrics[metric] = data
 
             for volume in instance['Volumes']:
-                    print("\n")
-                    print("| Volume ID  | Instance ID |        Type       |       Size      |")
-                    print("|------------|-------------|-------------------|-----------------|")
-                    print(f"| {volume['Volume ID']} | {instance['Instance ID']} | {volume['Type']} |{volume['Size']} GB")
-                    print("\n")
-                    print("  Volume Metrics:")
-                    print("| Metric  |        Min       |       Max      |     Avg |")
-                    print("|---------|------------------|----------------|-----------|")
-                    for metric, unit in volume_metrics:
-                        data = get_cloudwatch_metrics(cloudwatch, 'AWS/EBS', metric, unit, [{'Name': 'VolumeId', 'Value': volume['Volume ID']}], start_time, end_time)
-                        print(f"|{metric}|{data['Minimum']}|{data['Maximum']}| {data['Average']}")
+                volume_metrics_names = [
+                    ('VolumeReadBytes','Bytes'),
+                    ('VolumeWriteBytes', 'Bytes'),
+                    ('VolumeReadOps','Count'),
+                    ('VolumeWriteOps','Count'),
+                    ('VolumeTotalReadTime','Seconds'),
+                    ('VolumeTotalWriteTime','Seconds'),
+                    ('VolumeIdleTime', 'Seconds'),
+                    ('VolumeQueueLength','Count'),
+                    ('VolumeConsumedReadWriteOps','Count'),
+                    ('BurstBalance', 'Percent')
+                ]
+                volume_metrics = {}
+                for metric, unit in volume_metrics_names:
+                    data = get_cloudwatch_metrics(cloudwatch, 'AWS/EBS', metric, unit, [{'Name': 'VolumeId', 'Value': volume['VolumeId']}], start_time, end_time)
+                    volume_metrics[metric] = data
+                volume['VolumeMetrics'] = volume_metrics
+            
+            instance['InstanceMetrics'] = instance_metrics
+            all_data.append(instance)
+
+    print(json.dumps(all_data, indent=2))
+    return all_data
 
 # Define time range for metrics
 end_time = datetime.now(timezone.utc)
 start_time = end_time - timedelta(days=7)
 
 regions = list_aws_regions()
-analyze_instance_and_volume_metrics(regions, start_time, end_time)
+data = analyze_instance_and_volume_metrics(regions, start_time, end_time)

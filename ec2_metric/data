@@ -1,0 +1,376 @@
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-0362096e25040341e | t2.2xlarge    | 54.191.212.9 |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 1.37295081967452 | 1.48305084745763 | 1.40429575344931 |
+| NetworkIn       | 4146.0        | 6752.0        | 5878.0        |
+| NetworkOut      | 4296.0        | 6504.0        | 5596.8        |
+| NetworkPacketsIn | 45.0          | 69.0          | 60.7          |
+| NetworkPacketsOut | 60.0          | 88.0          | 75.1          |
+| DiskReadBytes   | 0.0           | 0.0           | 0.0           |
+| DiskReadOps     | 0.0           | 0.0           | 0.0           |
+| DiskWriteBytes  | 0.0           | 0.0           | 0.0           |
+| DiskWriteOps    | 0.0           | 0.0           | 0.0           |
+| EBSWriteBytes   | --            | --            | --            |
+| EBSReadBytes    | --            | --            | --            |
+| EBSWriteOps     | --            | --            | --            |
+| EBSReadOps      | --            | --            | --            |
+| CPUCreditUsage  | 0.559593      | 0.563828      | 0.561699      |
+| CPUCreditBalance | 1944.0        | 1944.0        | 1944.0        |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-061a8b139f2d8c21f | i-0362096e25040341e | gp3    | 200 GB   |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 0.0           | 18094.799031476996 |
+| VolumeWriteBytes | 0.0           | 0.0           | 20102.533744433025 |
+| VolumeReadOps   | 0.0           | 0.0           | 0.0           |
+| VolumeWriteOps  | 142.0         | 258.0         | 194.6         |
+| VolumeTotalReadTime | 0.0           | 0.0           | 0.0007530266343825666 |
+| VolumeTotalWriteTime | 0.0           | 0.0           | 0.0009917780061664955 |
+| VolumeIdleTime  | 59.18         | 59.35         | 59.26733333333333 |
+| VolumeQueueLength | 0.0           | 0.0           | 0.0           |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | 100.0         | 100.0         | 100.0         |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-03685eae639f63e00 | c5.xlarge     |           |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 0.5749712514374282 | 0.6333227779537007 | 0.5991124362153497 |
+| NetworkIn       | 85878.0       | 137061.0      | 105730.06666666667 |
+| NetworkOut      | 29740.0       | 44991.0       | 33772.13333333333 |
+| NetworkPacketsIn | 206.0         | 280.0         | 229.33333333333334 |
+| NetworkPacketsOut | 166.0         | 219.0         | 186.86666666666667 |
+| DiskReadBytes   | --            | --            | --            |
+| DiskReadOps     | --            | --            | --            |
+| DiskWriteBytes  | --            | --            | --            |
+| DiskWriteOps    | --            | --            | --            |
+| EBSWriteBytes   | 53760.0       | 555008.0      | 218248.53333333333 |
+| EBSReadBytes    | 0.0           | 0.0           | 0.0           |
+| EBSWriteOps     | 8.0           | 108.0         | 40.6          |
+| EBSReadOps      | 0.0           | 0.0           | 0.0           |
+| CPUCreditUsage  | --            | --            | --            |
+| CPUCreditBalance | --            | --            | --            |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-00c4a37e88167125c | i-03685eae639f63e00 | gp3    | 80 GB    |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 0.0           | 0.0           |
+| VolumeWriteBytes | 53760.0       | 555008.0      | 218248.53333333333 |
+| VolumeReadOps   | 0.0           | 0.0           | 0.0           |
+| VolumeWriteOps  | 8.0           | 108.0         | 40.6          |
+| VolumeTotalReadTime | 0.0           | 0.0           | 0.0           |
+| VolumeTotalWriteTime | 0.005771      | 0.093652      | 0.031396466666666664 |
+| VolumeIdleTime  | 59.972747     | 59.997031     | 59.989973266666674 |
+| VolumeQueueLength | 0.0           | 0.0009765625  | 0.00013020833333333333 |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-08dfb2a130a6ea7bd | t3.2xlarge    | 52.11.128.231 |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 0.7283333333333333 | 0.7782684776268645 | 0.7542222144309785 |
+| NetworkIn       | 120604.0      | 201944.0      | 148851.33333333334 |
+| NetworkOut      | 36979.0       | 50130.0       | 43829.0       |
+| NetworkPacketsIn | 274.0         | 359.0         | 315.1333333333333 |
+| NetworkPacketsOut | 239.0         | 315.0         | 281.46666666666664 |
+| DiskReadBytes   | --            | --            | --            |
+| DiskReadOps     | --            | --            | --            |
+| DiskWriteBytes  | --            | --            | --            |
+| DiskWriteOps    | --            | --            | --            |
+| EBSWriteBytes   | 57856.0       | 728576.0      | 201147.73333333334 |
+| EBSReadBytes    | 0.0           | 0.0           | 0.0           |
+| EBSWriteOps     | 7.0           | 148.0         | 37.0          |
+| EBSReadOps      | 0.0           | 0.0           | 0.0           |
+| CPUCreditUsage  | 0.3016993666666667 | 0.3071282     | 0.3036295222222223 |
+| CPUCreditBalance | 4608.0        | 4608.0        | 4608.0        |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-0d5b9d24044a39740 | i-08dfb2a130a6ea7bd | gp3    | 100 GB   |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 0.0           | 0.0           |
+| VolumeWriteBytes | 57856.0       | 728576.0      | 201147.73333333334 |
+| VolumeReadOps   | 0.0           | 0.0           | 0.0           |
+| VolumeWriteOps  | 7.0           | 148.0         | 37.0          |
+| VolumeTotalReadTime | 0.0           | 0.0           | 0.0           |
+| VolumeTotalWriteTime | 0.005429      | 0.116204      | 0.029206466666666667 |
+| VolumeIdleTime  | 59.969165     | 59.996028     | 59.99008006666667 |
+| VolumeQueueLength | 0.0           | 0.0009765625  | 6.510416666666667e-05 |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-06863fe818141dd11 | m5.large      |           |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 1.3083333333333333 | 1.383333333333333 | 1.3311111111111111 |
+| NetworkIn       | 78576.0       | 148384.0      | 105931.53333333334 |
+| NetworkOut      | 24248.0       | 39312.0       | 34138.6       |
+| NetworkPacketsIn | 176.0         | 273.0         | 229.73333333333332 |
+| NetworkPacketsOut | 146.0         | 226.0         | 191.06666666666666 |
+| DiskReadBytes   | --            | --            | --            |
+| DiskReadOps     | --            | --            | --            |
+| DiskWriteBytes  | --            | --            | --            |
+| DiskWriteOps    | --            | --            | --            |
+| EBSWriteBytes   | 50176.0       | 499712.0      | 199168.0      |
+| EBSReadBytes    | 0.0           | 0.0           | 0.0           |
+| EBSWriteOps     | 7.0           | 100.0         | 37.0          |
+| EBSReadOps      | 0.0           | 0.0           | 0.0           |
+| CPUCreditUsage  | --            | --            | --            |
+| CPUCreditBalance | --            | --            | --            |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-0fd0087c6c68649c9 | i-06863fe818141dd11 | gp3    | 80 GB    |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 0.0           | 0.0           |
+| VolumeWriteBytes | 50176.0       | 499712.0      | 199168.0      |
+| VolumeReadOps   | 0.0           | 0.0           | 0.0           |
+| VolumeWriteOps  | 7.0           | 100.0         | 37.0          |
+| VolumeTotalReadTime | 0.0           | 0.0           | 0.0           |
+| VolumeTotalWriteTime | 0.005246      | 0.079513      | 0.029126733333333325 |
+| VolumeIdleTime  | 59.976409     | 59.99684      | 59.99089373333333 |
+| VolumeQueueLength | 0.0           | 0.0009765625  | 0.00013020833333333333 |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-0e6deca11d00da1fb | r5b.xlarge    |           |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 0.6449892501791635 | 0.6916666666666665 | 0.6672252838276985 |
+| NetworkIn       | 86469.0       | 147025.0      | 106904.4      |
+| NetworkOut      | 25897.0       | 40217.0       | 33839.4       |
+| NetworkPacketsIn | 183.0         | 263.0         | 230.8         |
+| NetworkPacketsOut | 139.0         | 217.0         | 185.26666666666668 |
+| DiskReadBytes   | --            | --            | --            |
+| DiskReadOps     | --            | --            | --            |
+| DiskWriteBytes  | --            | --            | --            |
+| DiskWriteOps    | --            | --            | --            |
+| EBSWriteBytes   | 37376.0       | 449536.0      | 207257.6      |
+| EBSReadBytes    | 0.0           | 0.0           | 0.0           |
+| EBSWriteOps     | 6.0           | 92.0          | 38.46666666666667 |
+| EBSReadOps      | 0.0           | 0.0           | 0.0           |
+| CPUCreditUsage  | --            | --            | --            |
+| CPUCreditBalance | --            | --            | --            |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-099ac1b965cf42b2b | i-0e6deca11d00da1fb | gp3    | 80 GB    |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 0.0           | 0.0           |
+| VolumeWriteBytes | 37376.0       | 449536.0      | 207257.6      |
+| VolumeReadOps   | 0.0           | 0.0           | 0.0           |
+| VolumeWriteOps  | 6.0           | 92.0          | 38.46666666666667 |
+| VolumeTotalReadTime | 0.0           | 0.0           | 0.0           |
+| VolumeTotalWriteTime | 0.004162      | 0.076351      | 0.030300133333333333 |
+| VolumeIdleTime  | 59.977227     | 59.997026     | 59.98957193333332 |
+| VolumeQueueLength | 0.0           | 0.0009765625  | 0.0001953125  |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-054dc2dacc79792f4 | c5.xlarge     |           |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 0.67          | 0.7083333333333333 | 0.685111111111111 |
+| NetworkIn       | 78966.0       | 130294.0      | 106786.26666666666 |
+| NetworkOut      | 29373.0       | 37191.0       | 33665.6       |
+| NetworkPacketsIn | 204.0         | 263.0         | 232.46666666666667 |
+| NetworkPacketsOut | 156.0         | 212.0         | 184.06666666666666 |
+| DiskReadBytes   | --            | --            | --            |
+| DiskReadOps     | --            | --            | --            |
+| DiskWriteBytes  | --            | --            | --            |
+| DiskWriteOps    | --            | --            | --            |
+| EBSWriteBytes   | 62464.0       | 552960.0      | 196232.53333333333 |
+| EBSReadBytes    | 0.0           | 0.0           | 0.0           |
+| EBSWriteOps     | 8.0           | 106.0         | 35.46666666666667 |
+| EBSReadOps      | 0.0           | 0.0           | 0.0           |
+| CPUCreditUsage  | --            | --            | --            |
+| CPUCreditBalance | --            | --            | --            |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-031f1a0bf6cc1c2e2 | i-054dc2dacc79792f4 | gp3    | 80 GB    |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 0.0           | 0.0           |
+| VolumeWriteBytes | 62464.0       | 552960.0      | 196232.53333333333 |
+| VolumeReadOps   | 0.0           | 0.0           | 0.0           |
+| VolumeWriteOps  | 8.0           | 106.0         | 35.46666666666667 |
+| VolumeTotalReadTime | 0.0           | 0.0           | 0.0           |
+| VolumeTotalWriteTime | 0.005062      | 0.083412      | 0.026763733333333335 |
+| VolumeIdleTime  | 59.978538     | 59.99665      | 59.99101546666667 |
+| VolumeQueueLength | 0.0           | 0.0009765625  | 0.00013020833333333333 |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-02709ea10624839aa | t3.2xlarge    | 54.190.187.227 |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 0.660165041260315 | 0.701748537329355 | 0.6840085863470495 |
+| NetworkIn       | 379972.0      | 475129.0      | 418829.2      |
+| NetworkOut      | 220998.0      | 248194.0      | 236728.4      |
+| NetworkPacketsIn | 769.0         | 898.0         | 834.4         |
+| NetworkPacketsOut | 721.0         | 847.0         | 790.5333333333333 |
+| DiskReadBytes   | --            | --            | --            |
+| DiskReadOps     | --            | --            | --            |
+| DiskWriteBytes  | --            | --            | --            |
+| DiskWriteOps    | --            | --            | --            |
+| EBSWriteBytes   | 75264.0       | 568320.0      | 207872.0      |
+| EBSReadBytes    | 0.0           | 643072.0      | 61440.0       |
+| EBSWriteOps     | 9.0           | 102.0         | 34.53333333333333 |
+| EBSReadOps      | 0.0           | 12.0          | 1.6           |
+| CPUCreditUsage  | 0.27295015    | 0.27369466666666664 | 0.2733859222222222 |
+| CPUCreditBalance | 73.34916195   | 104.80152551666667 | 89.07511753333334 |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-09cd3f597e5d3e3b5 | i-02709ea10624839aa | gp3    | 100 GB   |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 643072.0      | 61440.0       |
+| VolumeWriteBytes | 75264.0       | 568320.0      | 207872.0      |
+| VolumeReadOps   | 0.0           | 12.0          | 1.6           |
+| VolumeWriteOps  | 9.0           | 102.0         | 34.53333333333333 |
+| VolumeTotalReadTime | 0.0           | 0.035199      | 0.0029241333333333334 |
+| VolumeTotalWriteTime | 0.009684      | 0.118422      | 0.027546000000000005 |
+| VolumeIdleTime  | 59.930632     | 59.996058     | 59.98486813333333 |
+| VolumeQueueLength | 0.0           | 0.001953125   | 0.00013020833333333333 |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-0687fdc27af20f058 | g4dn.2xlarge  | 35.89.54.19 |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 0.5533333333333333 | 0.5766666666666665 | 0.5653333333333334 |
+| NetworkIn       | 189819.0      | 291329.0      | 237279.8      |
+| NetworkOut      | 85235.0       | 114905.0      | 97928.8       |
+| NetworkPacketsIn | 448.0         | 618.0         | 533.8666666666667 |
+| NetworkPacketsOut | 442.0         | 575.0         | 503.93333333333334 |
+| DiskReadBytes   | 0.0           | 0.0           | 0.0           |
+| DiskReadOps     | 0.0           | 0.0           | 0.0           |
+| DiskWriteBytes  | 0.0           | 0.0           | 0.0           |
+| DiskWriteOps    | 0.0           | 0.0           | 0.0           |
+| EBSWriteBytes   | 55808.0       | 556544.0      | 237704.53333333333 |
+| EBSReadBytes    | 0.0           | 0.0           | 0.0           |
+| EBSWriteOps     | 11.0          | 107.0         | 42.266666666666666 |
+| EBSReadOps      | 0.0           | 0.0           | 0.0           |
+| CPUCreditUsage  | --            | --            | --            |
+| CPUCreditBalance | --            | --            | --            |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-0da89a9cf01d9d378 | i-0687fdc27af20f058 | gp3    | 100 GB   |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 0.0           | 0.0           |
+| VolumeWriteBytes | 55808.0       | 556544.0      | 237704.53333333333 |
+| VolumeReadOps   | 0.0           | 0.0           | 0.0           |
+| VolumeWriteOps  | 11.0          | 107.0         | 42.266666666666666 |
+| VolumeTotalReadTime | 0.0           | 0.0           | 0.0           |
+| VolumeTotalWriteTime | 0.008898      | 0.492206      | 0.06280533333333332 |
+| VolumeIdleTime  | 59.875325     | 59.995746     | 59.98124053333334 |
+| VolumeQueueLength | 0.0           | 0.0078125     | 0.0007161458333333333 |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |
+
+
+| Region  | Instance ID       | Instance Type | Public IP |
+|---------|-------------------|---------------|-----------|
+| us-west-2 | i-09c5eac8fc000c883 | t3.2xlarge    | 35.90.203.139 |
+
+Instance Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| CPUUtilization  | 0.6500866782237632 | 1.9791753436068305 | 0.7511822185814256 |
+| NetworkIn       | 129467.0      | 220653.0      | 172727.4      |
+| NetworkOut      | 58332.0       | 71282.0       | 64356.2       |
+| NetworkPacketsIn | 371.0         | 473.0         | 411.6666666666667 |
+| NetworkPacketsOut | 346.0         | 432.0         | 385.4         |
+| DiskReadBytes   | --            | --            | --            |
+| DiskReadOps     | --            | --            | --            |
+| DiskWriteBytes  | --            | --            | --            |
+| DiskWriteOps    | --            | --            | --            |
+| EBSWriteBytes   | 67072.0       | 2969600.0     | 508142.93333333335 |
+| EBSReadBytes    | 0.0           | 16592896.0    | 1129949.8666666667 |
+| EBSWriteOps     | 10.0          | 362.0         | 68.8          |
+| EBSReadOps      | 0.0           | 2473.0        | 165.86666666666667 |
+| CPUCreditUsage  | 0.2632613     | 0.37398305    | 0.3002680333333333 |
+| CPUCreditBalance | 71.2022455    | 102.58660115  | 86.9113747277778 |
+
+| Volume ID       | Instance ID       | Type  | Size    |
+|-----------------|-------------------|-------|---------|
+| vol-04cd31af9b91a32fd | i-09c5eac8fc000c883 | gp3    | 100 GB   |
+
+Volume Metrics:
+| Metric          | Min           | Max           | Avg           |
+|-----------------|---------------|---------------|---------------|
+| VolumeReadBytes | 0.0           | 16592896.0    | 1129949.8666666667 |
+| VolumeWriteBytes | 67072.0       | 2969600.0     | 508142.93333333335 |
+| VolumeReadOps   | 0.0           | 2473.0        | 165.86666666666667 |
+| VolumeWriteOps  | 10.0          | 362.0         | 68.8          |
+| VolumeTotalReadTime | 0.0           | 2.453251      | 0.16628346666666666 |
+| VolumeTotalWriteTime | 0.006594      | 0.463308      | 0.0644692     |
+| VolumeIdleTime  | 57.43508      | 59.996794     | 59.813650599999995 |
+| VolumeQueueLength | 0.0           | 0.0439453125  | 0.0035807291666666665 |
+| VolumeConsumedReadWriteOps | --            | --            | --            |
+| BurstBalance    | --            | --            | --            |

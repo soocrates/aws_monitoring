@@ -1,7 +1,6 @@
 import boto3
 from datetime import datetime, timedelta, timezone
 
-
 def list_aws_regions():
     # Initialize the EC2 client with default region
     ec2 = boto3.client('ec2')
@@ -20,24 +19,36 @@ def list_running_instances(region):
     ec2 = session.client('ec2')
     
     # Fetch all instances that are currently running
-    response = ec2.describe_instances()
-    print(response)
+    response = ec2.describe_instances(Filters=[{'Name': 'instance-state-name', 'Values': ['running']}])
     
     instances = []
     for reservation in response['Reservations']:
         for instance in reservation['Instances']:
-            # You can add more details as needed
+            # Gather all volume IDs
+            volume_ids = [vol['Ebs']['VolumeId'] for vol in instance['BlockDeviceMappings'] if 'Ebs' in vol]
+            # Fetch volume details for each volume ID
+            volumes_info = []
+            if volume_ids:
+                volumes_response = ec2.describe_volumes(VolumeIds=volume_ids)
+                for volume in volumes_response['Volumes']:
+                    volume_info = {
+                        'Volume ID': volume['VolumeId'],
+                        'Type': volume['VolumeType'],
+                        'Size': volume['Size'],
+                        'IOPS': volume.get('Iops', 'N/A'),  # Not all volume types will have IOPS
+                        'Throughput': volume.get('Throughput', 'N/A')  # Throughput info might not be available for all types
+                    }
+                    volumes_info.append(volume_info)
+            # Collect instance details
             instance_info = {
                 'Region': region,
                 'Instance ID': instance['InstanceId'],
                 'Instance Type': instance['InstanceType'],
-                'Public IP': instance.get('PublicIpAddress')
+                'Volumes': volumes_info
             }
             instances.append(instance_info)
     
     return instances
-  
-  
 def get_compute_resource_usage(instance_id,metric_name, unit, start_time, end_time, region, period=10800):
 
 
@@ -68,11 +79,10 @@ def analyze_usage_trends(datapoints):
     minimum = min(dp['Minimum'] for dp in datapoints)
     maximum = max(dp['Maximum'] for dp in datapoints)
     return {'Average': average, 'Sum': sum_values, 'Minimum': minimum, 'Maximum': maximum}
+  
 
 # Specify your region (e.g., 'us-east-1')
-# regions = list_aws_regions()
-regions = {'us-east-2'}
-
+regions = list_aws_regions()
 end_time = datetime.now(timezone.utc)
 start_time = end_time - timedelta(days=7)
 
@@ -86,6 +96,7 @@ metrics_info = [
     ('DiskReadOps', 'Count'),
     ('DiskWriteBytes', 'Bytes'),
     ('DiskWriteOps', 'Count'),
+    ('CPUCreditBalance', 'Count'),
     ('EBSWriteBytes', 'Bytes'),
     ('EBSReadBytes', 'Bytes'),
     ('EBSWriteOps', 'Count'), 
@@ -99,12 +110,16 @@ for region in regions:
     running_instances = list_running_instances(region)
     if running_instances:
         for instance in running_instances:
-            # Print table row
+            # Print table head
             instance_id = instance['Instance ID']
             region = instance['Region']
-            print("| Region  | Instance ID       | Instance Type | Public IP |")
-            print("|---------|-------------------|---------------|-----------|")
-            print(f"| {instance['Region']} | {instance_id} | {instance['Instance Type']} | {instance['Public IP']}|")
+            print("| Region  | Instance ID       | Instance Type | Volume Info                                    |")
+            print("|---------|-------------------|---------------|------------------------------------------------|")
+
+            volume_info_str = ' | '.join([f"{vol['Volume ID']} Type: {vol['Type']}, Size: {vol['Size']} GB, IOPS: {vol['IOPS']}, Throughput: {vol['Throughput']} Mbps" for vol in instance['Volumes']])
+            # Print table row
+            print(f"| {instance['Region']} | {instance['Instance ID']} | {instance['Instance Type']} | {volume_info_str} |")
+            
             print()
             
             for metric_name, unit in metrics_info:
